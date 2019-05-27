@@ -21,6 +21,7 @@ Example usage
 -----------
 
 .. code-block:: python
+
     import numpy as np
     from msid import msid_score
 
