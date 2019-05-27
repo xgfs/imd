@@ -37,7 +37,7 @@ Example usage
     print('MSID(x0, x1)', msid_score(x0, x1))
     print('MSID(x0, y0)', msid_score(x0, y0))
 
-## Contanct
+Contanct
 -----------
 
 ``echo "%7=87@=<2=<>5.27" | tr '#-)/->' '_-|'``
