@@ -1,0 +1,8 @@
+.vscode/*
+.ipynb_checkpoints
+cpp/*.so
+.idea
+*__pycache__*
+*.np*
+
+.backup/
