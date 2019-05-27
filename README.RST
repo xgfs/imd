@@ -15,7 +15,7 @@ Requirements
 * Python 2.7 or Python 3.3+
 * `SciPy <http://www.scipy.org/install.html/>`_
 * `NumPy <http://www.numpy.org/>`_
-* [optional] `pykgraph <https://github.com/aaalgo/kgraph/>`_, for Anaconda users, just `conda install pykgraph`
+* [optional] `pykgraph <https://github.com/aaalgo/kgraph/>`_, for Anaconda users, just ``conda install pykgraph``
 
 Example usage
 -----------
