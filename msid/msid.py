@@ -62,15 +62,15 @@ def msid_score(x, y, ts=np.logspace(-1, 1, 256), k=5, m=10, niters=100, rademach
         m: Lanczos steps in SLQ
         niters: number of starting random vectors for SLQ
         rademacher: if True, sample random vectors from Rademacher distributions, else sample standard normal distribution
-        graph_builder: if 'kgraph', uses faster graph construction (options:
+        graph_builder: if 'kgraph', uses faster graph construction (options: 'sparse', 'kgraph')
         msid_mode: 'l2' to compute the l2 norm of the distance between `msid1` and `msid2`;
                 'max' to find the maximum abosulute difference between two descriptors over temperature
-        normalized_laplacian: if True, use normalized Laplacian.
+        normalized_laplacian: if True, use normalized Laplacian
         normalize: 'empty' for average heat kernel (corresponds to the empty graph normalization of NetLSD),
                 'complete' for the complete, 'er' for erdos-renyi
-                normalization, 'none' for no normalization.
+                normalization, 'none' for no normalization
     Returns:
-        msid_score: the scalar value of the distance between discriptors.
+        msid_score: the scalar value of the distance between discriptors
     '''
     normed_msidx = msid_descriptor(x, ts, k, m, niters, rademacher, graph_builder, normalized_laplacian, normalize)
     normed_msidy = msid_descriptor(y, ts, k, m, niters, rademacher, graph_builder, normalized_laplacian, normalize)
@@ -98,12 +98,11 @@ def msid_descriptor(x, ts=np.logspace(-1, 1, 256), k=5, m=10, niters=100, radema
         m: Lanczos steps in SLQ
         niters: number of starting random vectors for SLQ
         rademacher: if True, sample random vectors from Rademacher distributions, else sample standard normal distribution
-        graph_builder: if 'kgraph', uses faster graph construction (options:
-        'sparse', 'kgraph').
-        normalized_laplacian: if True, use normalized Laplacian.
+        graph_builder: if 'kgraph', uses faster graph construction (options: 'sparse', 'kgraph')
+        normalized_laplacian: if True, use normalized Laplacian
         normalize: 'empty' for average heat kernel (corresponds to the empty graph normalization of NetLSD),
                 'complete' for the complete, 'er' for erdos-renyi
-                normalization, 'none' for no normalization.
+                normalization, 'none' for no normalization
     Returns:
         normed_msidx: normalized msid descriptor
     '''
