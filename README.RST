@@ -2,7 +2,7 @@
 Intrinsic Multi-scale Evaluation of Generative Models
 ===============================
 
-This repository provides a reference implementation of MSID, a metric for comparing underlying *intrinsic* geometry of data manifolds `paper <https://arxiv.org/>`_.
+This repository provides a reference implementation of MSID, a metric for comparing underlying *intrinsic* geometry of data manifolds (`paper <https://arxiv.org/>`_).
 
 Installation
 -----------
@@ -37,7 +37,7 @@ Example usage
     print('MSID(x0, x1)', msid_score(x0, x1))
     print('MSID(x0, y0)', msid_score(x0, y0))
 
-Contanct
+Contact
 -----------
 
 ``echo "%7=87@=<2=<>5.27" | tr '#-)/->' '_-|'``
