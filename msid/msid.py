@@ -11,7 +11,7 @@ NORMALIZATION = 1e6
 def _build_graph(data, k=5, graph_builder='sparse', normalized=True):
     """
     Return Laplacian from data or load preconstructed from path
-    
+
     Arguments:
         data: samples
         k: number of neighbours for graph construction
@@ -62,11 +62,13 @@ def msid_score(x, y, ts=np.logspace(-1, 1, 256), k=5, m=10, niters=100, rademach
         m: Lanczos steps in SLQ
         niters: number of starting random vectors for SLQ
         rademacher: if True, sample random vectors from Rademacher distributions, else sample standard normal distribution
-        graph_builder: if 'sparse', return use Laplacian, else use dense...
+        graph_builder: if 'kgraph', uses faster graph construction (options:
         msid_mode: 'l2' to compute the l2 norm of the distance between `msid1` and `msid2`;
                 'max' to find the maximum abosulute difference between two descriptors over temperature
+        normalized_laplacian: if True, use normalized Laplacian.
         normalize: 'empty' for average heat kernel (corresponds to the empty graph normalization of NetLSD),
-                'complete' for the complete, 'er' for erdos-renyi normalization, 'none' for no normalization
+                'complete' for the complete, 'er' for erdos-renyi
+                normalization, 'none' for no normalization.
     Returns:
         msid_score: the scalar value of the distance between discriptors.
     '''
@@ -96,11 +98,14 @@ def msid_descriptor(x, ts=np.logspace(-1, 1, 256), k=5, m=10, niters=100, radema
         m: Lanczos steps in SLQ
         niters: number of starting random vectors for SLQ
         rademacher: if True, sample random vectors from Rademacher distributions, else sample standard normal distribution
-        graph_builder: if 'sparse', return use Laplacian, else use dense...
+        graph_builder: if 'kgraph', uses faster graph construction (options:
+        'sparse', 'kgraph').
+        normalized_laplacian: if True, use normalized Laplacian.
         normalize: 'empty' for average heat kernel (corresponds to the empty graph normalization of NetLSD),
-                'complete' for the complete, 'er' for erdos-renyi normalization, 'none' for no normalization
+                'complete' for the complete, 'er' for erdos-renyi
+                normalization, 'none' for no normalization.
     Returns:
-        msid_score: the scalar value of the distance between discriptors.
+        normed_msidx: normalized msid descriptor
     '''
     Lx = _build_graph(x, k, graph_builder, normalized_laplacian)
 
