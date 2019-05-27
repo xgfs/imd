@@ -167,6 +167,6 @@ def slq_red_var(A, m, niters, ts, rademacher):
     fs = [np.exp, lambda x: x]
 
     traces = _slq_ts_fs(A, m, niters, ts, rademacher, fs)
-    subee = traces[0, :] - (A.shape[0] + traces[1, :] / np.exp(ts))
-    sub = A.shape[0] - ts * A.shape[0] / np.exp(ts)
+    subee = traces[0, :] - traces[1, :] / np.exp(ts)
+    sub = - ts * A.shape[0] / np.exp(ts)
     return subee + sub
