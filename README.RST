@@ -2,7 +2,7 @@
 Intrinsic Multi-scale Evaluation of Generative Models
 ===============================
 
-This repository provides a reference implementation of MSID, a metric for comparing underlying *intrinsic* geometry of data manifolds (`paper <https://arxiv.org/>`_).
+This repository provides a reference implementation of MSID, a metric for comparing underlying *intrinsic* geometry of data manifolds (`paper <https://arxiv.org/abs/1905.11141>`_).
 
 Installation
 -----------
